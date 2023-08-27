@@ -1,0 +1,1023 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    color: #e69b2b;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+
+
+}
+
+body {
+    overflow-x: hidden;
+
+}
+
+/*Responsive Navbar with logo and DM*/
+nav {
+
+    height: 6rem;
+    width: 100vw;
+    background-color: transparent;
+    display: flex;
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo {
+    padding: 1vh 1vw;
+    text-align: center;
+}
+
+.logo img {
+    padding: 0px 10px;
+    width: 170px
+}
+
+/*Styling Links*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-dropdown {
+    position: absolute;
+    z-index: -100;
+    box-shadow: 0 3px 12px rgba(255, 166, 0, 0.671);
+    display: none;  
+    text-decoration: none;
+    border-radius: 25px;}
+   
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      nav ul li {
+        float: left;
+        position: relative;
+      }
+      
+      nav ul li a {
+        display: block;
+        color: #e69b2b;
+        padding: 0 20px;
+        background: #ff990000;
+        text-decoration: none;
+        line-height: 70px;
+      }
+      
+      nav ul li a:hover {
+                background: #2581dc00;
+                color: #ffffff;
+                transition: .4s;
+      }
+      
+      nav ul li a:not(:only-child):after {
+                padding-left: 4px;
+                content: '  ▾'; }
+      
+      nav ul li ul li {
+        min-width: 160px;
+        }
+      
+      nav ul li ul li a {
+        padding: 15px;
+        line-height: 20px;
+        
+        
+      }
+      
+      .nav-dropdown {
+        position: absolute;
+        z-index: 1;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        display: none;  }
+      
+      /* Mobile Hamburger Menu */
+      
+      .nav-mobile {
+        display: none;
+        height: 70px;
+        width: 70px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #ff9900;
+      }
+      
+      /* Media Query for Navigation */
+      
+      @media only screen and (max-width: 800px) {
+      
+        .nav-mobile {
+          display: block;
+        }
+        
+        nav {
+          width: 100%;
+          padding: 0 0px;
+        }
+        
+        nav ul {
+          display: none;
+        }
+        
+        nav ul li {
+          float: none;
+        }
+        
+         nav ul li a {
+                padding: 15px;
+                line-height: 20px; 
+        }
+      
+        nav ul li ul li a {
+                padding-left: 40px;
+                background-color: rgba(128, 128, 128, 0.007);
+        }
+        
+        .nav-dropdown {
+          position: static;
+         
+        }
+      }
+      
+      @media screen and (min-width: 800px) {
+        .nav-list {
+          display: block !important; } }
+      #nav-toggle {
+        position: absolute;
+        left: 18px;
+        top: 22px;
+        cursor: pointer;
+        padding: 10px 35px 16px 0; }
+        #nav-toggle span,
+        #nav-toggle span:before,
+        #nav-toggle span:after {
+          cursor: pointer;
+          border-radius: 1px;
+          height: 4px;
+          width: 30px;
+          background: rgb(255, 167, 34);
+          position: absolute;
+          display: block;
+          content: '';
+          transition: all 300ms ease-in-out; }
+        #nav-toggle span:before {
+          top: -10px; }
+        #nav-toggle span:after {
+          bottom: -10px; }
+        #nav-toggle.active span {
+          background-color: transparent; }
+          #nav-toggle.active span:before, #nav-toggle.active span:after {
+            top: 0; }
+          #nav-toggle.active span:before {
+            transform: rotate(45deg); }
+          #nav-toggle.active span:after {
+            transform: rotate(-45deg); }
+      
+      
+  
+
+.nav-links li a {
+    text-decoration: none;
+    margin-left: 0 0.7vh;
+
+}
+
+.nav-links li a:hover {
+    transition: all ease-in-out 250ms;
+    color: #b97b06;
+}
+
+.nav-links li {
+    position: relative;
+
+}
+
+.nav-links li a:hover::before {
+    width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button {
+    background-color: transparent;
+    border: 1.5px solid #eeb30f;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+.login-button:hover {
+    color: #ffffff;
+    background-color: #ffc400;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+.join-button {
+    color: #ffbb00;
+    background-color: transparent;
+    border: 1.5px solid #ffae00;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: #ffae00;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #ffa600;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+    nav {
+
+        margin-bottom: 100px;
+        z-index: 3;
+    }
+
+    .hamburger {
+        margin-bottom: 50px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        right: 5%;
+        left: 50%;
+        top: 65%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: #25212c;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(30px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+}
+
+/*Animating Hamburger Icon on Click*/
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.mode {
+    float: right;
+
+
+}
+
+.change {
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 100%;
+    font-size: 30px;
+}
+
+.dark {
+    background-color: #0d051d;
+    color: #e6e6e6;
+}
+
+/*ANIMATED BACKGROUND*/
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #ffffff 50%, #ffb23d 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/* Responsive Booking Form */
+
+
+
+
+.card {
+    max-width: 500px;
+    margin: 10px;
+    color: black;
+    border-radius: 25 px;
+   
+}
+
+p {
+    margin: 0px;
+}
+
+.container .h8 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+}
+
+
+.form-control {
+    color: white;
+    background-color: #ffffffec;
+    border: 2px solid transparent;
+    height: 60px;
+    padding-left: 20px;
+   
+}
+
+
+.text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+}
+.clear {
+    clear: both;
+}
+
+.booking-form {
+    box-sizing: border-box;
+    width: 65%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(20, 13, 1, 0.15);
+    margin-top: 88px;
+
+}
+
+h2.b-heading,
+h3.b-heading {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+
+}
+
+
+.radio-section {
+    text-align: left;
+    margin: 0.7em 0;
+}
+
+.radio-section h6 {
+    display: inline;
+    margin-top: 10px;
+    color: #ffa600;
+    font-size: 19px;
+    text-transform: capitalize;
+    margin-bottom: .7em;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.radio-section ul {
+    display: inline;
+}
+
+.radio-buttons li input[type="radio"] {
+    cursor: pointer;
+}
+
+.radio-buttons li label {
+    color: #ffae00;
+    font-size: 13.5px;
+    font-weight: 400;
+    border-radius: 25px;
+    letter-spacing: 1px;
+}
+
+
+.booking-form input[type="text"],
+.booking-form input[type="number"],
+.booking-form input[type="password"],
+.booking-form input[type="id"],
+.booking-form input[type="exp"],
+.booking-form input[type="email"],
+.booking-form input[type="date"],
+
+select.form-control,
+input#datepicker {
+    width: 80%;
+    font-weight: 300;
+    color: #b48d0c;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    padding: 10px 10px;
+    outline: none;
+    background: rgba(255, 248, 223, 0.822);
+    border: none;
+    border-radius: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.27);
+    box-sizing: border-box;
+
+
+}
+
+.field-s {
+    margin-bottom: 20px;
+   
+
+}
+.flex-column{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.form-control  {
+    background: rgba(255, 248, 223, 0.822);
+    margin-top: 10px;
+    width: 50%;
+    font-weight: 300;
+    color: #b48d0c;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+    padding: 10px 10px;
+    outline: none;
+    background: rgba(255, 248, 223, 0.822);
+    border: none;
+    border-radius: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.27);
+    box-sizing: border-box;
+}
+
+.form-text {
+    width: 100%;
+}
+
+select.form-control option {
+    background: #ffffffec;
+
+}
+.booking-form .input-box {
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.booking-form .input-box input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    border: none;
+}
+.booking-form input[type="submit"],
+.booking-form input[type="reset"] {
+
+    padding: 0.5em 4em;
+    align-items: center;
+    border: none;
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-left: 1em;
+    float: left;
+    outline: none;
+    letter-spacing: 1px;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    transition: .5s all;
+    cursor: pointer;
+  background: linear-gradient(to right, #ffbe5b,
+            #ff9900 100%);
+    font-size: 17px;
+    color: #fff;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+}
+
+.booking-form input[type="submit"] {
+   background: linear-gradient(to right, #ffbe5b,
+            #ff9900 100%);
+    font-size: 17px;
+    color: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.booking-form input[type="submit"]:hover {
+    letter-spacing: 1px;
+   background: linear-gradient(to right, #ff9900,
+            #ffbe5b 100%);
+}
+
+.booking-form input[type="reset"]:hover {
+    letter-spacing: 1px;
+   background: linear-gradient(to right, #ff9900,
+            #ffbe5b 100%);
+}
+
+
+.booking-form label {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.83);
+    letter-spacing: 2px;
+    font-weight: 400;
+
+    margin-bottom: 5px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+ul.radio-buttons li {
+    display: inline-block;
+    margin: 0em 2em;
+}
+
+@media (max-width:1440px) {
+    .booking-form {
+        width: 73%;
+    }
+}
+
+@media (max-width:1366px) {
+    .booking-form {
+        width: 75%;
+    }
+}
+
+@media (max-width:1280px) {
+    .booking-form {
+        width: 80%;
+    }
+}
+
+@media (max-width:1080px) {
+    .booking-form {
+        width: 83%;
+        padding: 2em 2.2em;
+    }
+}
+
+@media (max-width:1024px) {
+
+    h2.b-heading,
+    h3.b-heading {
+        font-size: 22px;
+        padding: 0px 20px 7px 0px;
+    }
+
+    .field-s {
+        margin-bottom: 0.8em;
+    }
+
+    .booking-form input[type="submit"],
+    .booking-form input[type="reset"] {
+        padding: 0.5em 3em;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width:768px) {
+
+    h2.b-heading,
+    h3.b-heading {
+        font-size: 21px;
+        padding: 0px 15px 7px 0px;
+    }
+
+    .radio-section h6 {
+        font-size: 17px;
+        letter-spacing: 1.5px;
+    }
+
+    ul.radio-buttons li {
+        margin: 0em 1em;
+    }
+}
+
+@media (max-width:667px) {
+
+    h2.b-heading,
+    h3.b-heading {
+        font-size: 19px;
+        letter-spacing: 1.5px;
+    }
+
+    .booking-form {
+        width: 86%;
+        padding: 2em 2em;
+    }
+
+    .booking-form input[type="text"],
+    .booking-form input[type="email"],
+
+    select.form-control,
+    input#datepicker {
+        padding: 8px 10px;
+    }
+
+    .field-s {
+        margin-bottom: 0.9em;
+    }
+
+    h2.b-heading,
+    h3.b-heading {
+        margin-bottom: .6em;
+    }
+}
+
+@media (max-width:640px) {
+    .booking-form input[type="submit"] {
+        margin-right: 0.7em;
+    }
+}
+
+@media (max-width:600px) {
+    .booking-form {
+        width: 90%;
+    }
+.booking-form input[type="text"],
+.booking-form input[type="number"],
+.booking-form input[type="id"],
+.booking-form input[type="email"],
+.booking-form input[type="date"],
+select.form-control,
+input#datepicker {
+    width: 95%;}
+    .booking-form input[type="submit"],
+    .booking-form input[type="reset"] {
+        padding: 0.5em 2em;
+    }
+}
+
+@media (min-width:480px) {
+    .main-f {
+        display: flex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+}
+
+.form-text1,
+.form-text2 {
+    flex-basis: 48.5%;
+    -webkit-flex-basis: 48.5%;
+}
+
+
+@media (max-width:480px) {
+    ul.radio-buttons li {
+        margin: 0em 0.5em;
+    }
+
+    .radio-section {
+        margin: 1.3em 0 .7em;
+    }
+
+    .booking-form {
+        width: 85%;
+    }
+
+    ul.radio-buttons li {
+        margin: 1em 0em 0em 0.2em;
+        display: block;
+    }
+
+    .booking-form input[type="submit"],
+    .booking-form input[type="reset"] {
+        font-size: 1em;
+    }
+
+    .radio-Section {
+        margin: 1em 0 .7em;
+    }
+}
+
+@media (max-width:414px) {
+    .Booking-form {
+        width: 90%;
+    }
+
+    .booking-form {
+        width: 90%;
+        padding: 1.5em 1.7em;
+    }
+}
+
+@media (max-width:384px) {
+
+    .booking-form input[type="submit"],
+    .booking-form input[type="reset"] {
+        float: none;
+    }
+
+    .booking-form input[type="submit"] {
+        margin-right: 0em;
+    }
+}
+
+@media (max-width:320px) {
+    .booking-form {
+        width: 93%;
+        padding: 1.3em 1.5em;
+    }
+
+    h2.b-heading,
+    h3.b-heading {
+        font-size: 18px;
+        letter-spacing: 1.4px;
+        padding: 0px 12px 5px 0px;
+    }
+}
+
+
+/* Responsive Footer */
+footer {
+
+    bottom: 0;
+    
+    padding-left: 100px 100px;
+}
+
+@media (max-height:800px) {
+    footer {
+        position: static;
+    }
+
+    header {
+        padding-top: 40px;
+    }
+}
+
+
+.footer-distributed {
+    background-color: #161122;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+    width: 30%;
+}
+
+.footer-distributed h3 {
+    color: #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+}
+
+/* Styling footer logo */
+
+.footer-distributed .footer-left img {
+    width: 50%;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+
+.footer-distributed .footer-center i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+    color: #e0ac1c;
+    text-decoration: none;
+    ;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+    width: 30%;
+}
+
+.footer-distributed .footer-company-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 880px) {
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+
+}
+.hidden{
+    display: none;
+}
